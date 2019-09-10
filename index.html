@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,500,700" rel="stylesheet">
+    <link rel="styleSheet" media="all" type="text/css" href="css/swiper.css">
     <link rel="styleSheet" media="all" type="text/css" href="css/style.min.css">
   </head>
   <body>
@@ -115,9 +116,21 @@
       <div class="container">
         <div class="gallery__flex">
           <div class="gallery__slider">
-            <div class="gallery__img1"><img src="./images/slider.jpg" alt=""></div>
-            <div class="gallery__img2">
-              <div class="gallery__bg-yellow"></div><img src="./images/slidermain.jpg" alt="">
+            <div class="gallery__img1"><img src="./images/slider.jpg" alt="">
+              <div class="gallery__navigation">
+                <div class="gallery__navigation-prev"></div>
+                <div class="gallery__navigation-next"></div>
+              </div>
+            </div>
+            <div class="gallery__img2 swiper-container">
+              <div class="gallery__bg-yellow"></div>
+              <div class="swiper-wrapper"><img class="swiper-slide" src="./images/slidermain.jpg" alt=""><img class="swiper-slide" src="./images/slidermain.jpg" alt=""><img class="swiper-slide" src="./images/moon-stars-space.jpg" alt=""></div>
+              <!--.swiper-slide.gallery__slider-->
+              <!--	.gallery__img1-->
+              <!--		img(src="./images/slider.jpg" alt="")-->
+              <!--	.gallery__img2-->
+              <!--		.gallery__bg-yellow-->
+              <!--		img(src="./images/slidermain.jpg" alt="")-->
             </div>
           </div>
           <div class="gallery__text">
@@ -187,6 +200,9 @@
         <div class="contacts-block__phone footer__contacts-phone">+1 234 567-89-00</div>
       </div>
     </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/swiper.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
