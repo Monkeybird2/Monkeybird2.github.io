@@ -85,4 +85,53 @@
     );
     return false;
   });
+
+  // lang
+  var lang =$('.lang');
+  var langList = $('.lang__list');
+  function closeLang(){
+      lang.removeClass('is-active');
+      langList.fadeOut(20);
+  }
+ 
+  lang.on('click',function(){
+    if(lang.hasClass('is-active')){
+      lang.removeClass('is-active');
+      langList.fadeOut(20);
+      $(document).off('click',closeLang);
+    } else {
+      lang.addClass('is-active');
+      langList.fadeIn(250);
+      setTimeout(function(){
+        $(document).one('click',closeLang);
+
+      },100);
+    }
+    
+  })
+  // burger
+
+    var burgerBtn = $('.menu__btn');
+    var burgerMenu  = $('.menu__box');
+    function closeBurgerMenu(){
+      if(burgerBtn.hasClass('is-active')){
+        burgerBtn.removeClass('is-active');
+        burgerMenu.removeClass('is-active');
+      }
+    }
+
+    burgerBtn.on('click',function(){
+      if(burgerBtn.hasClass('is-active')){
+        burgerBtn.removeClass('is-active');
+        burgerMenu.removeClass('is-active');
+      } else {
+        burgerBtn.addClass('is-active');
+        burgerMenu.addClass('is-active');
+        setTimeout(function(){
+          $(document).one('click',closeBurgerMenu);
+  
+        },100);
+      }
+      
+    })
 })(window.jQuery);

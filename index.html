@@ -12,12 +12,12 @@
   <title></title>
   <meta name="description" content="">
 
-  <link rel="stylesheet" href="css/style.min.css?v=1577030598714">
+  <link rel="stylesheet" href="css/style.min.css?v=1577128232447">
 
 </head>
 <body class="">
 <div class="wrapper">
-  <header class="header" style="background-color: #262624">
+  <header class="header">
   <div class="container header__container">
     <div class="header__logo logo">
        <img src="img/logo2.png" alt="">        
@@ -30,14 +30,32 @@
       <li class="main-menu__item"><a class="main-menu__link" href="#ourpartners">Our partners</a></li>
     </ul>
 
-    <ul class="header__lang lang">
-      <li>Eng</li>
-    </ul>
-    <ul class="social-link">
+    <div class="header__lang lang">
+      <div>Eng</div>
+      <div class="lang__list">
+        <a href="" class="lang__item">Eng</a>
+        <a href="" class="lang__item">Rus</a>
+      </div>
+    </div>
+    <ul class="social-link header__social">
         <li class="social-link__item"><a href=""><img src="img/Instagram.svg" alt=""></a> </li>
         <li class="social-link__item"><a href=""><img src="img/fb.svg" alt=""></a></li>
     </ul>
-    <button class="header__btn btn btn--orange">Contact us</button>
+    <a href="#contactus" class="header__btn btn btn--orange">Contact us</a>
+    <div class="hamburger-menu">
+    <input id="menu__toggle" class="menu__toggle" type="checkbox">
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+      <li><a class="menu__item" href="#about">About us</a></li>
+			<li><a class="menu__item" href="#whychouseus">Why chouse us</a></li>
+			<li><a class="menu__item" href="#ourproduct">Our products</a></li>
+			<li><a class="menu__item" href="#purchase">Purchase</a></li>
+			<li><a class="menu__item" href="#ourpartners">Our partners</a></li>
+    </ul>
+  </div>
   </div>
 </header>
 
@@ -129,7 +147,10 @@
       
 
   </div>
-  <div class="top-slider__pagination swiper-pagination"></div>
+  <div class="container top-slider__wr-pagination">
+    <div class="top-slider__pagination swiper-pagination"></div>
+
+  </div>
 
   <button type="button" class="top-slider__prev swiper-button-prev"></button>
 <button type="button" class="top-slider__next swiper-button-next"></button>
@@ -780,7 +801,7 @@ and seller. </p>
   </div>
   <div class="container contact__container">
     <div class="contact__left">
-      <h3 class="contact__title">Contacts us</h3>
+      <h3 class="contact__title title-h3">Contacts us</h3>
       <p class="contact__desc">
         We’re easy to talk to for all inquiries, questions, or comments. Don’t
         hesitate to reach out with the buttons below.
@@ -807,16 +828,16 @@ and seller. </p>
           <a class="contacts-info__email-two link-hover">
             e-mail: export@rosskat.ru
           </a>
-          <p class="contacts-info__sktpe">
+          <p class="contacts-info__skype">
             skype: vitavi0204
           </p>
         </div>
       </div>
     </div>
-    <div class="contact__right">
-      <form class="form-contact" action="" method="POST">
+    <div class="contact__right" id="contactus">
+      <form class="form-contact" action="" method="POST" autocomplete="off">
         <div class="field form-contact__name">
-          <input type="text" name="name" placeholder="NAME" class="input">
+          <input type="text" name="name" placeholder="NAME" class="input" autocomplete="off">
           <div class="field__wrong"></div>
         </div>
         <div class="form-contact__inner-wrapper">
@@ -887,7 +908,7 @@ and Terms of Service apply
           <a href=""><img src="img/fb.svg" alt=""></a>
         </li>
       </ul>
-      <button class="header__btn btn btn--orange btn--tiny">Contact us</button>
+      <button class="footer__btn btn btn--orange btn--tiny">Contact us</button>
     </div>
     <p>Web Design — <a href="" class="link-hover">Somebody</a></p>
   </div>
