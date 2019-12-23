@@ -1278,7 +1278,7 @@ body {
       margin-right: 25px; }
       @media all and (min-width: 768px) {
         .header__social .social-link__item:not(:last-child) {
-          margin-right: 10; } }
+          margin-right: 10px; } }
 
 .social-link {
   display: -webkit-box;
