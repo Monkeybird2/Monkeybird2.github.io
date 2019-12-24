@@ -1,8 +1,6 @@
 !(function($) {
-  console.log(1);
   var mySwiper = new Swiper(".partners__slider", {
     slidesPerView: 5,
-    // initialSlide: 2,
     spaceBetween: 20,
     watchOverflow: true,
     loop: true,
@@ -10,30 +8,56 @@
       nextEl: ".partners__slider-next",
       prevEl: ".partners__slider-prev"
     },
-    // pagination: {
-    //     el: ".partners__slider-pagination",
-    //     type: "bullets",
-    //     clickable: true,
-    //     dynamicBullets: true
-    // },
+   
 
     breakpoints: {
-      768: {
+      520: {
         slidesPerView: 2,
-        centeredSlides: false
+      },
+      768: {
+        slidesPerView: 3,
       },
       1200: {
         slidesPerView: 3,
-        centeredSlides: false
       },
-      1400: {
-        slidesPerView: 4,
-        // centeredSlides: true,
-        initialSlide: 3
-      }
+      
     }
   });
- 
+  var portFo = new Swiper(".portfolio__slider", {
+    slidesPerView: 7,
+    // spaceBetween: 2,
+    watchOverflow: true,
+    // loop: true,
+    navigation: {
+      nextEl: ".portfolio__next",
+      prevEl: ".portfolio__prev"
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      // hide: true,
+      dragSize: 70,
+    },
+
+    breakpoints: {
+      500: {
+        slidesPerView: 3,
+      },
+      570: {
+        slidesPerView: 4,
+      },
+      768: {
+        slidesPerView: 5,
+      },
+      1000: {
+        slidesPerView: 5,
+      },
+      1250: {
+        slidesPerView: 6,
+      },
+      
+    }
+  });
+  
   new Swiper(".top-slider", {
     slidesPerView: 1,
     // spaceBetween: 20,s

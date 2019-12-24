@@ -55,29 +55,29 @@
         this.startActiveTab();
         this.showTabs();
     }
-    function select(){
-        var item = $('.tabs-content__wrapper');
-        item.slideUp();
-        var self = this;
-        $(document).on('click','.tabs-nav-mobile',function(){
-            self.next().slideDown();
-        })
-    }
-
-    function setup_for_width(mql) {
-        if (mql.matches) {
-            if ($('.tabs').length > 0) {
-                new MyTabs('.tabs', 0).init();
-            }
-        } else {
-            $('.tabs-content__item').fadein();
-            select();
-        }
-    }
+    // function select(){
+    //     var item = $('.tabs-content__wrapper');
+    //     item.slideUp();
+    //     var self = this;
+    //     $(document).on('click','.tabs-nav-mobile',function(){
+    //         self.next().slideDown();
+    //     })
+    // }
+    new MyTabs('.tabs', 0).init();
+    // function setup_for_width(mql) {
+    //     if (mql.matches) {
+    //         if ($('.tabs').length > 0) {
+    //             new MyTabs('.tabs', 0).init();
+    //         }
+    //     } else {
+    //         $('.tabs-content__item').fadein();
+    //         select();
+    //     }
+    // }
     
-    var mql = window.matchMedia("screen and (min-width: 768px)"); 
+    // var mql = window.matchMedia("screen and (min-width: 768px)"); 
     
-    mql.addListener(setup_for_width); 
+    // mql.addListener(setup_for_width); 
     
-    setup_for_width(mql); // Вызовем нашу функцию
+    // setup_for_width(mql); // Вызовем нашу функцию
 })(window.jQuery);
