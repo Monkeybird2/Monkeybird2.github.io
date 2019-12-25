@@ -1360,7 +1360,7 @@ body {
 
 .header {
   position: relative;
-  padding: 10px 0;
+  padding: 13px 0;
   color: #ffffff;
   background-color: #262624; }
   .header__container {
@@ -1436,7 +1436,6 @@ body {
   .top .swiper-container {
     overflow: visible; }
   .top__bg {
-    min-height: 65px;
     width: 100%;
     top: 0;
     position: absolute;
@@ -1467,10 +1466,11 @@ body {
       top: 0;
       left: 0;
       width: 100%;
-      height: 0px;
+      height: 50px;
       z-index: 2;
+      -webkit-filter: blur(30px);
+              filter: blur(30px);
       box-shadow: 0 -21px 44px 100px rgba(212, 107, 69, 0.6);
-      background: #e16f49;
       background: -webkit-gradient(linear, left top, left bottom, from(#e16f49), color-stop(44%, #e16f49), to(rgba(212, 107, 69, 0.683911)));
       background: linear-gradient(180deg, #e16f49 0%, #e16f49 44%, rgba(212, 107, 69, 0.683911) 100%); }
   .top__slider {
@@ -1494,6 +1494,25 @@ body {
     min-width: 100%;
     min-height: 100%;
     max-width: none; }
+  .top-slider__wr-img {
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none; }
+  .top-slider__img {
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    -o-object-fit: cover;
+       object-fit: cover; }
   .top-slider__title {
     position: relative;
     z-index: 3;
@@ -1617,31 +1636,35 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0; }
-  @media all and (min-width: 1024px) {
-    .advantages {
-      margin: 0 -17px -109px; } }
   @media all and (min-width: 530px) {
     .advantages {
       margin: 0 -17px -29px; } }
+  @media all and (min-width: 1024px) {
+    .advantages {
+      margin: 0 -17px -109px; } }
   .advantages__item {
     position: relative;
     padding-left: 0;
     width: 100%;
     margin: 0 0 20px; }
+    @media all and (min-width: 530px) {
+      .advantages__item {
+        width: calc(50% - 34px);
+        margin: 0 17px 29px; } }
     @media all and (min-width: 1024px) {
       .advantages__item {
         padding-left: 100px;
         width: calc(33.33% - 34px);
         margin: 0 17px 109px; } }
-    @media all and (min-width: 530px) {
-      .advantages__item {
-        width: calc(50% - 34px);
-        margin: 0 17px 29px; } }
   .advantages__wr-img {
     position: static;
     left: 0;
     width: 90px;
-    height: 90px; }
+    height: 90px;
+    margin: 0 auto; }
+    @media all and (min-width: 530px) {
+      .advantages__wr-img {
+        margin: 0; } }
     @media all and (min-width: 1024px) {
       .advantages__wr-img {
         position: absolute;
@@ -1656,7 +1679,11 @@ body {
     text-transform: uppercase;
     font-size: 16px;
     line-height: 1.25;
-    font-weight: bold; }
+    font-weight: bold;
+    margin: 0 auto 10px; }
+    @media all and (min-width: 530px) {
+      .advantages__h3 {
+        margin: 0 0 10px; } }
   .advantages__desc {
     font-size: 16px;
     line-height: 1.1875; }
@@ -1702,6 +1729,9 @@ body {
     @media all and (min-width: 1024px) {
       .contact__left {
         width: 57.6%; } }
+    @media all and (max-width: 565px) {
+      .contact__left {
+        padding: 60px 20px 60px 0; } }
     .contact__left::before {
       content: "";
       position: absolute;
@@ -1754,6 +1784,9 @@ body {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; } }
+    @media all and (max-width: 565px) {
+      .contact__inner-wr {
+        padding-top: 10px; } }
   .contact__right {
     position: relative;
     z-index: 1;
@@ -1796,6 +1829,9 @@ body {
   .contact__info {
     max-width: 350px;
     margin-top: 50px; }
+    @media all and (max-width: 565px) {
+      .contact__info {
+        margin-top: 20px; } }
 
 .contacts-info {
   font-size: 16px; }
@@ -2201,12 +2237,12 @@ body {
     @media all and (min-width: 1024px) {
       .footer__right {
         margin-bottom: 0;
-        margin-left: 6%;
         -webkit-box-ordinal-group: 4;
             -ms-flex-order: 3;
                 order: 3;
         -ms-flex-item-align: end;
-            align-self: flex-end; } }
+            align-self: flex-end;
+        margin-left: auto; } }
   .footer__rating {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;

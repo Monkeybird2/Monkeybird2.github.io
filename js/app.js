@@ -136,14 +136,17 @@
   // burger
 
     var burgerBtn = $('.menu__btn');
+    var burgerItem = $('.menu__item');
     var burgerMenu  = $('.menu__box');
     function closeBurgerMenu(){
+      $(document).off('click',closeBurgerMenu);
+      burgerItem.off('click',closeBurgerMenu);
       if(burgerBtn.hasClass('is-active')){
         burgerBtn.removeClass('is-active');
         burgerMenu.removeClass('is-active');
       }
     }
-
+    
     burgerBtn.on('click',function(){
       if(burgerBtn.hasClass('is-active')){
         burgerBtn.removeClass('is-active');
@@ -153,7 +156,7 @@
         burgerMenu.addClass('is-active');
         setTimeout(function(){
           $(document).one('click',closeBurgerMenu);
-  
+          burgerItem.one('click',closeBurgerMenu);
         },100);
       }
       
