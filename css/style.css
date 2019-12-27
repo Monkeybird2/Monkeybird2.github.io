@@ -1182,6 +1182,22 @@ body {
   .mt10mobile {
     margin-top: 10px; } }
 
+@-webkit-keyframes opacity-video {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes opacity-video {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.lazy-opacity {
+  -webkit-animation: opacity-video 1.5s 1 linear;
+          animation: opacity-video 1.5s 1 linear; }
+
 .rating {
   font-size: 12px;
   line-height: 1;
@@ -1360,7 +1376,7 @@ body {
 
 .header {
   position: relative;
-  padding: 13px 0;
+  padding: 15px 0;
   color: #ffffff;
   background-color: #262624; }
   .header__container {
@@ -1448,31 +1464,27 @@ body {
       content: "";
       position: absolute;
       pointer-events: none;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 42%;
-      height: 100%;
-      -webkit-filter: blur(2px);
-              filter: blur(2px);
-      box-shadow: 150px 50px 70px rgba(212, 107, 69, 0.6);
-      background: #e16f49;
-      background: -webkit-gradient(linear, left top, right top, from(#e16f49), color-stop(44%, #e16f49), to(rgba(212, 107, 69, 0.6)));
-      background: linear-gradient(90deg, #e16f49 0%, #e16f49 44%, rgba(212, 107, 69, 0.6) 100%); }
-    .top__bg::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50px;
       z-index: 2;
-      -webkit-filter: blur(30px);
-              filter: blur(30px);
-      box-shadow: 0 -21px 44px 100px rgba(212, 107, 69, 0.6);
-      background: -webkit-gradient(linear, left top, left bottom, from(#e16f49), color-stop(44%, #e16f49), to(rgba(212, 107, 69, 0.683911)));
-      background: linear-gradient(180deg, #e16f49 0%, #e16f49 44%, rgba(212, 107, 69, 0.683911) 100%); }
+      top: 0;
+      left: 0;
+      background-image: url("../img/bg_orange.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      background-position: -586px 0; }
+      @media all and (min-width: 480px) {
+        .top__bg::before {
+          background-position: -486px 0; } }
+      @media all and (min-width: 1024px) {
+        .top__bg::before {
+          background-position: -286px 0; } }
+      @media all and (min-width: 1400px) {
+        .top__bg::before {
+          background-position: -100px 0; } }
+      @media all and (min-width: 1600px) {
+        .top__bg::before {
+          background-position: 0 0; } }
   .top__slider {
     height: 100%; }
 
