@@ -114,6 +114,7 @@
   // lang
   var lang =$('.lang');
   var langList = $('.lang__list');
+  langList.fadeOut(20);
   function closeLang(){
       lang.removeClass('is-active');
       langList.fadeOut(20);
@@ -139,16 +140,33 @@
     var burgerBtn = $('.menu__btn');
     var burgerItem = $('.menu__item');
     var burgerMenu  = $('.menu__box');
-    function closeBurgerMenu(){
-      $(document).off('click',closeBurgerMenu);
+
+    function closeBurgerMenu(e){
       burgerItem.off('click',closeBurgerMenu);
       if(burgerBtn.hasClass('is-active')){
         burgerBtn.removeClass('is-active');
         burgerMenu.removeClass('is-active');
       }
     }
-    
+
+    function checkClickOnSelect(e) {
+      var filterBlock = document.querySelector('.menu__box');
+      var box = filterBlock.getBoundingClientRect();
+      $(document).off('click',checkClickOnSelect);
+      try {
+        if (e.clientX > box.right || e.clientX < box.left || e.clientY > box.bottom || e.clientY < box.top){
+          if(burgerBtn.hasClass('is-active')){
+            burgerBtn.removeClass('is-active');
+            burgerMenu.removeClass('is-active');
+          }
+        };
+      } catch (e){
+        console.log(e)
+      }
+   
+    };
     burgerBtn.on('click',function(){
+      
       if(burgerBtn.hasClass('is-active')){
         burgerBtn.removeClass('is-active');
         burgerMenu.removeClass('is-active');
@@ -156,13 +174,26 @@
         burgerBtn.addClass('is-active');
         burgerMenu.addClass('is-active');
         setTimeout(function(){
-          $(document).one('click',closeBurgerMenu);
+          $(document).on('click',checkClickOnSelect);
           burgerItem.one('click',closeBurgerMenu);
         },100);
       }
-      
     });
 
+    function setup_for_width(mql) {
+      if (mql.matches) {
+        closeBurgerMenu();
+        checkClickOnSelect();
+      } else {
+       
+      }
+    }
+     
+    var mql = window.matchMedia("screen and (min-width: 1024px)"); 
+     
+    mql.addListener(setup_for_width); // Добавим прослушку на смену результата
+     
+    setup_for_width(mql); // Вызовем нашу функцию
 
     // popup ================
     function closeModalClick(e) {
@@ -183,7 +214,7 @@
       $(document).on('click',closeModalClick);
       $(document).on('keydown',closeModalKey);
     }
-    
+
     function closePopup(){
       popup.removeClass('is-active');
       $('body').removeClass('overlay');
