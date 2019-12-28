@@ -28,6 +28,7 @@
     // spaceBetween: 2,
     watchOverflow: true,
     // loop: true,
+    // autoHeight: true,
     navigation: {
       nextEl: ".portfolio__next",
       prevEl: ".portfolio__prev"
@@ -61,7 +62,7 @@
   new Swiper(".top-slider", {
     slidesPerView: 1,
     // spaceBetween: 20,s
-    // watchOverflow: true,
+    watchOverflow: true,
     pagination: {
       el: ".top-slider__pagination",
       type: "bullets",
@@ -160,5 +161,63 @@
         },100);
       }
       
+    });
+
+
+    // popup ================
+    function closeModalClick(e) {
+      if (e.target === document.querySelector('.overlay')) {
+        closePopup();
+      }
+    }
+    function closeModalKey(e) {
+      if(e.keyCode === 27){
+        closePopup();
+      }
+    }
+    var popup = $('.popup');
+    
+    function openPopup(){
+      popup.addClass('is-active');
+      $('body').addClass('overlay');
+      $(document).on('click',closeModalClick);
+      $(document).on('keydown',closeModalKey);
+    }
+    
+    function closePopup(){
+      popup.removeClass('is-active');
+      $('body').removeClass('overlay');
+      $(document).off('click',closeModalClick);
+      $(document).off('keydown',closeModalKey);
+    }
+
+    
+
+    $('.popup__cross').on('click',function(){
+      closePopup()
     })
+    openPopup()
+   
+
+    /// выравнивание высоты  у портфолио =======================
+  function heightServiceTitle() {
+    
+    let block = $('.tabs-nav__item');
+    let height = 0;
+    block.css('height', '');
+
+    block.each(function () {
+      
+        if ($(this).innerHeight() > height) {
+            height = $(this).innerHeight();
+        }
+    });
+    
+    block.css('height', height + 'px');
+
+
+}
+
+window.addEventListener('load', heightServiceTitle);
+window.addEventListener('resize', heightServiceTitle);
 })(window.jQuery);
